@@ -2,7 +2,7 @@ class PortsList:
     pass
 
 portsList = PortsList()
-portsList.leftMotorID = 0
+portsList.leftMotorID = 4
 portsList.rightMotorID = 1
 
 portsList.stickID = 0
@@ -16,5 +16,5 @@ class ButtonsList:
     pass
 
 buttonsList = ButtonsList()
-buttonsList.yAxis = 0
-buttonsList.xAxis = 1
+buttonsList.yAxis = 1
+buttonsList.xAxis = 0

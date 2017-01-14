@@ -12,12 +12,14 @@ class DriveTrain(Subsystem):
         super().__init__('DriveTrain')
 
         self.leftMotors = wpilib.Talon(robotmap.portsList.leftMotorID)
+        # self.leftMotors.setInverted(True)
         self.rightMotors = wpilib.Talon(robotmap.portsList.rightMotorID)
 
-        self.leftMotorsEncoder = wpilib.Encoder(robotmap.portsList.leftMotorsEncoderChannelAID, robotmap.portsList.leftMotorsEncoderChannelBID)
-        self.rightMotorsEncoder = wpilib.Encoder(robotmap.portsList.rightMotorsEncoderChannelAID, robotmap.portsList.rightMotorsEncoderChannelBID)
+        # self.leftMotorsEncoder = wpilib.Encoder(robotmap.portsList.leftMotorsEncoderChannelAID, robotmap.portsList.leftMotorsEncoderChannelBID)
+        # self.rightMotorsEncoder = wpilib.Encoder(robotmap.portsList.rightMotorsEncoderChannelAID, robotmap.portsList.rightMotorsEncoderChannelBID)
 
         self.robotDrive = wpilib.RobotDrive(self.leftMotors, self.rightMotors)
+        self.robotDrive.setInvertedMotor(wpilib.RobotDrive.MotorType.kRearLeft, True)
 
     def initDefaultCommand(self):
         self.setDefaultCommand(FollowJoystick())
